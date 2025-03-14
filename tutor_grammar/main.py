@@ -2,7 +2,6 @@ import os
 import streamlit as st
 from langchain_google_genai import ChatGoogleGenerativeAI
 from streamlit_lottie import st_lottie
-import json
 import requests
 import time
 
