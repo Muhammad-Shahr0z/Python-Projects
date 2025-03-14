@@ -11,6 +11,7 @@ st.set_page_config(
     page_icon="📝",
     layout="centered",
     initial_sidebar_state="collapsed"
+    
 )
 
 # Load Lottie animations
@@ -167,6 +168,40 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
+# Custom CSS for footer and body padding
+st.markdown("""
+<style>
+    /* Remove unnecessary bottom padding */
+    .stApp {
+        padding-bottom: 0 !important;
+    }
+
+    /* Footer styling */
+    .footer-container {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background: var(--card-bg);
+        padding: 10px 0;
+        box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+        z-index: 1000;
+    }
+
+    .custom-footer {
+        text-align: center;
+        font-size: 1rem;
+        font-weight: 600;
+        color: var(--primary);
+    }
+
+    /* Ensure content doesn't overlap with the footer */
+    .main-content {
+        margin-bottom: 60px; /* Adjust based on footer height */
+    }
+</style>
+""", unsafe_allow_html=True)
+
 # API key setup
 key = os.getenv("GOOGLE_API_KEY")
 
@@ -274,7 +309,7 @@ if lottie_animation_footer:
 footer_html = """
 <div class="footer-container">
     <div class="custom-footer">
-        Designed & Developed by <b>Muhammad Shahroz</b>
+        Developed by <b>Muhammad Shahroz</b>
     </div>
 </div>
 """
