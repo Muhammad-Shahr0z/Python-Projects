@@ -3,15 +3,14 @@ import streamlit as st
 from langchain_google_genai import ChatGoogleGenerativeAI
 from streamlit_lottie import st_lottie
 import requests
-import time
+
 
 # Set page config FIRST
 st.set_page_config(
     page_title="English Grammar Tutor",
     page_icon="📝",
     layout="centered",
-    initial_sidebar_state="collapsed"
-    
+    initial_sidebar_state="collapsed",
 )
 
 # Load Lottie animations
@@ -23,9 +22,6 @@ def load_lottie_url(url):
 
 lottie_animation_header = load_lottie_url("https://assets3.lottiefiles.com/packages/lf20_jcikwtux.json")
 lottie_animation_footer = load_lottie_url("https://assets10.lottiefiles.com/packages/lf20_vybwn7df.json")
-
-
-
 
 # Custom CSS for premium look, animations and styling
 st.markdown("""
@@ -250,8 +246,6 @@ if st.button("✨ Analyze My Writing"):
         """, unsafe_allow_html=True)
     else:
         with st.spinner("Analyzing your text for improvements..."):
-            # Delay to simulate processing (or avoid rate limits)
-            time.sleep(1)
             # Define enhanced AI prompt
             messages = [
                 ("system", """You are an expert English tutor. Analyze the user's text and:
